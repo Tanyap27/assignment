@@ -3,6 +3,9 @@ sudo adduser --disabled-password --gecos "" phrase_admin
 sudo adduser --disabled-password --gecos "" phrase_user
 sudo usermod -aG sudo phrase_admin
 
+#Allow no password for phrase_admin
+echo 'phrase_admin ALL=(ALL) NOPASSWD:ALL' | sudo tee -a /etc/sudoers
+
 sudo mkdir -p /phrase_admin/.ssh
 sudo mkdir -p /phrase_user/.ssh
 
